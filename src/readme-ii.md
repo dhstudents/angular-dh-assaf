@@ -44,6 +44,6 @@ const routes : Routes = [
 11. try it manually: localhost:4200/home localhost:4200/about ext.
 12. try to use regular links : not working!!!!!!!! shows #
 13. change href to : href="home" href="about ext. 
-14. use marquee in header component to show the problem
-15. change href with routerLink !!!!!!!
+14. use marquee in header component to show the reloading problem
+15. change href with routerLink !!!!!!! reloding solved not requesting the server
 
