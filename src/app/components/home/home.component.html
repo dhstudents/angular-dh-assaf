@@ -5,6 +5,8 @@ src="https://20kh6h3g46l33ivuea3rxuyu-wpengine.netdna-ssl.com/wp-content/uploads
 
 		<div>
 			<button (click)="incImageWidth()">+</button>
-			<button (click)="decImageWidth()">=</button>
-			<button (click)="resetImageWidth()">-</button>
+			<button (click)="resetImageWidth()">=</button>
+			<button (click)="decImageWidth()">-</button>
+      <br>
+      <input  ([ngModel])="imageWidth"    type="range" min='0' max='500' value='300' step='10'>
 		</div>
