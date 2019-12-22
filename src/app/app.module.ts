@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AboutComponent } from './components/about/about.component';
 import { HelpComponent } from './components/help/help.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 const routes : Routes = [
@@ -22,13 +23,9 @@ const routes : Routes = [
    { path: '**', component: PageNotFoundComponent }
 ]
 
-
-
-
-
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot( routes ) ],
-  declarations: [ LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, ProductsComponent, AboutComponent, HelpComponent ],
+  declarations: [ LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, ProductsComponent, AboutComponent, HelpComponent, PageNotFoundComponent ],
   bootstrap:    [LayoutComponent]
 })
 export class AppModule { }
