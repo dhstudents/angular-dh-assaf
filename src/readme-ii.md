@@ -46,4 +46,5 @@ const routes : Routes = [
 13. change href to : href="home" href="about ext. 
 14. use marquee in header component to show the reloading problem
 15. change href with routerLink !!!!!!! reloding solved not requesting the server
+16. use routerLinkActive
 
