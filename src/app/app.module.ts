@@ -7,9 +7,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
-
 import { HomeComponent } from './components/home/home.component';
-
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],

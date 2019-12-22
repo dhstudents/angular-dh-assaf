@@ -1,3 +1,14 @@
+<style>
+  div { 
+    position : absolute;
+    right: 20px;
+    top: 150px;
+    padding: 30px;
+    border: 1px black solid;
+  }
+</style>
+
+
 <h3>Only this month {{ discount }}% discount {{ MMMyyyy | date:  'MMM yyyy' }}<h3>
 
 		<img
@@ -8,5 +19,5 @@ src="https://20kh6h3g46l33ivuea3rxuyu-wpengine.netdna-ssl.com/wp-content/uploads
 			<button (click)="resetImageWidth()">=</button>
 			<button (click)="decImageWidth()">-</button>
       <br>
-      <input  ([ngModel])="imageWidth"    type="range" min='0' max='500' value='300' step='10'>
+      <input  [(ngModel)]="imageWidth"    type="range" min='0' max='500' value='300' step='10'>
 		</div>
