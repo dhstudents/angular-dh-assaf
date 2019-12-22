@@ -24,3 +24,11 @@ Routing
    localhost:4200/about       -> AboutComponent
    localhost:4200/Help        -> HelpComponent
    -----------------------------------------------
+https://angular.io/start/routing
+https://angular.io/guide/router
+4. define the outlet in layout->main
+    <router-outlet></router-outlet> the router injection point
+    import @angular/router
+5. define the roting map
+6. add @angular/router
+7. add import to app.module.ts
