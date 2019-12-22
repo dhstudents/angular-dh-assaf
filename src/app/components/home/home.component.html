@@ -1,3 +1,10 @@
-<p>
-home works!
-</p>
+<h3>Only this month {{ discount }}% discount {{ MMMyyyy | date:  'MMM yyyy' }}<h3>
+
+		<img
+src="https://20kh6h3g46l33ivuea3rxuyu-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Industrial-Robot-Sales-Broke-Records-in-2018.jpg" alt="industrial" [width]="imageWidth">
+
+		<div>
+			<button (click)="incImageWidth()">+</button>
+			<button (click)="decImageWidth()">=</button>
+			<button (click)="resetImageWidth()">-</button>
+		</div>
