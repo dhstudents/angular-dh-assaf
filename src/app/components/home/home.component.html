@@ -11,7 +11,7 @@
 
 <h3>Only this month {{ discount }}% discount {{ MMMyyyy | date:  'MMM yyyy' }}<h3>
 
-		<img
+		<img #homeimage
 src="https://20kh6h3g46l33ivuea3rxuyu-wpengine.netdna-ssl.com/wp-content/uploads/2019/06/Industrial-Robot-Sales-Broke-Records-in-2018.jpg" alt="industrial" [width]="imageWidth">
 
 		<div>
@@ -20,4 +20,6 @@ src="https://20kh6h3g46l33ivuea3rxuyu-wpengine.netdna-ssl.com/wp-content/uploads
 			<button (click)="decImageWidth()">-</button>
       <br>
       <input  [(ngModel)]="imageWidth"    type="range" min='0' max='500' value='300' step='10'>
+
+      <p>Width: {{ homeimage.width}}</p>
 		</div>
