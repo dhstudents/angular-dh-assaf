@@ -8,3 +8,4 @@
 --------------------
 Routing
 --------------------
+1. add components for each link (route)
