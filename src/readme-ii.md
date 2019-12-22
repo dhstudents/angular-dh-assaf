@@ -31,4 +31,16 @@ https://angular.io/guide/router
     import @angular/router
 5. define the roting map
 6. add @angular/router
-7. add import to app.module.ts
+7. add import to app.module.ts : import { RouterModule , Routes} from '@angular/router'
+8. add the router module to :   imports:[ BrowserModule, FormsModule, RouterModule.forRoot( )],
+9. app.routing.component.ts
+10. create the map:
+const routes : Routes = [
+   { path: 'home', component: HomeComponent },
+   { path: 'products', component: ProductsComponent },
+   { path: 'about', component: AboutComponent },
+   { path: 'help', component: HelpComponent },
+]
+11. try it manuali: localhost:4200/home localhost:4200/about
+12. use <a> with routerLink instead of href 
+
