@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-public showImage(): void {
-  
+public showImage(eventImageSource): void {
+  alert("Image clicked..." + eventImageSource )
 }
 
 

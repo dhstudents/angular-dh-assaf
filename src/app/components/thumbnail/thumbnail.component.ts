@@ -10,7 +10,7 @@ export class ThumbnailComponent{
   public imageSource : string;
 
   @Output()
-  public imageClicked : EventEmitter<string>;
+  public imageClicked : EventEmitter<string> = new EventEmitter<string>();
 
   public imageHasBeenClicked() : void {
     this.imageClicked.emit(this.imageSource);
