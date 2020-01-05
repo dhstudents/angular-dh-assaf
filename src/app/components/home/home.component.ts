@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-home',
@@ -11,11 +13,14 @@ export class HomeComponent implements OnInit {
   discount = 10;
   imageWidth : number = 300
 
-  constructor() { 
+
+
+  constructor(private title: Title) { 
     this.imageWidth = 300;
   }
 
   ngOnInit() {
+    this.title.setTitle("Home page - PRODUCTS")
   }
 
   incImageWidth() {
