@@ -13,7 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HelpComponent } from './components/help/help.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
-import { ProductsService } from './services/product.service';
+import { ProductService } from './services/product.service';
 
 
 const routes : Routes = [
