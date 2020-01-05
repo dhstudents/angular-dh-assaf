@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HelpComponent } from './components/help/help.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
+import { ProductsService } from './services/products.service';
 
 
 const routes : Routes = [
@@ -27,6 +28,7 @@ const routes : Routes = [
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot( routes ) ],
   declarations: [ LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, ProductsComponent, AboutComponent, HelpComponent, PageNotFoundComponent, ThumbnailComponent ],
-  bootstrap:    [LayoutComponent]
+  bootstrap:    [LayoutComponent],
+  providers: [ProductsService]
 })
 export class AppModule { }
