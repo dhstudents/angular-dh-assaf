@@ -13,15 +13,26 @@ export class ProductsComponent implements OnInit {
   constructor(private productService : ProductService) { }
 
   ngOnInit() {
-   // sync call
+  //----------
+  // sync call
+  //----------
   // this.products = this.productService.getAllProducts();
-   // async call
-   console.log("start");
-   this.productService.getAllProductsAsync((data) =>{ 
-     //console.log(data)
-     this.products = data;
-      } , (err) =>{console.log(err)});
-   console.log("end");
+
+  //-------------------------
+  // async call with callback
+  //-------------------------
+  //  console.log("start");
+  //  this.productService.getAllProductsAsync((data) =>{ 
+  //    //console.log(data)
+  //    this.products = data;
+  //     } , (err) =>{console.log(err)});
+  //  console.log("end");
+  
+  this.productService.getAllProductsAsyncPromise()
+              .then(  (products) =>{  this.products = products;  })
+              .catch( error => console.log(error))
+  
+  
   }
 
   
