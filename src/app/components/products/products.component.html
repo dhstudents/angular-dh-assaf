@@ -1,16 +1,23 @@
 <!-- <div>{{ products | json }}</div> -->
+<!-- https://media1.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif -->
 
-<div>
-	<table>
-		<tr>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Stock</th>
-		</tr>
-		<tr *ngFor="let product of products">
-			<td>{{ product.name}}</td>
-			<td>{{ product.price}}</td>
-			<td>{{ product.stock}}</td>
-		</tr>
-	</table>
+<div *ngIf="!products">
+  <!-- <img style="margin-top: 30px" src="https://media1.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif" width="100" alt="Loading..."> -->
+  <img style="margin-top: 30px" src="https://clipart4biz.com/images/transparent-background-loading-3.gif" width="100" alt="Loading...">
 </div>
+
+
+	<div *ngIf="products">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Stock</th>
+			</tr>
+			<tr *ngFor="let product of products">
+				<td>{{ product.name}}</td>
+				<td>{{ product.price}}</td>
+				<td>{{ product.stock}}</td>
+			</tr>
+		</table>
+	</div>

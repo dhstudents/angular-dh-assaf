@@ -28,6 +28,6 @@ export class ProductService {
       } catch (error) {
         failCallback(error);
       }
-    }, 3000);
+    }, 5000);
   }
 }
