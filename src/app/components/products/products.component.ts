@@ -28,10 +28,37 @@ export class ProductsComponent implements OnInit {
   //     } , (err) =>{console.log(err)});
   //  console.log("end");
   
-  this.productService.getAllProductsAsyncPromise()
-              .then(  (products) =>{  this.products = products;  })
-              .catch( error => console.log(error))
+
+
+  //-------------------------
+  // async call with promise
+  //-------------------------
+  // this.productService.getAllProductsAsyncPromise()
+  //             .then(  (products) =>{  this.products = products;  })
+  //             .catch( error => console.log(error))
+
+  //---------------------------
+  // async call with observable (next , error , complete)
+  //---------------------------
+  this.productService.getAllProductsAsyncObservable().subscribe(
+    products =>{  this.products = products;  },
+    error => console.log(error)
+    // () => {} complete
+
+  )
+
+
   
+  
+  
+  //             .then(  (products) =>{  this.products = products;  })
+  //             .catch( error => console.log(error))
+
+
+
+
+
+
   
   }
 
