@@ -40,9 +40,9 @@ export class ProductsComponent implements OnInit {
   //---------------------------
   // async call with observable (next , error , complete)
   //---------------------------
-  this.productService.getAllProductsAsyncObservable().subscribe(
-    products =>{  this.products = products;  },
-    error => console.log(error)
+  // this.productService.getAllProductsAsyncObservable().subscribe(
+  //   products =>{  this.products = products;  },
+  //   error => console.log(error)
     // () => {} complete
 
   )
