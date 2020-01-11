@@ -62,7 +62,7 @@ export class ProductService {
       let handle = setInterval(() => {
         try {
           const productlist: Product[] = [];
-          productlist.push(new Product(1, "Apple", 3.5, 100));
+          productlist.push(new Product(1, "Apple" +this.counter, 3.5, 100));
           productlist.push(new Product(2, "Banana", 2, 120));
           productlist.push(new Product(3, "Peach", 10, 50));
           productlist.push(new Product(4, "Watermelon", 6, 40));
@@ -70,7 +70,7 @@ export class ProductService {
           console.log("tick " + this.counter++ )
           observer.next(productlist);
           if ( this.counter > 5) {
-            debugger;
+          /  debugger;
             clearInterval(handle);
             observer.complete()
           }
