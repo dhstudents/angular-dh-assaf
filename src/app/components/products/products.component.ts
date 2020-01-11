@@ -13,12 +13,12 @@ export class ProductsComponent implements OnInit {
   constructor(private productService : ProductService) { }
 
   ngOnInit() {
-    this.products.push( new Product(1 , "p 1" , 2.3 , 20)),
-    this.products.push( new Product(1 , "p 2" , 2.3 , 20)),
-    this.products.push( new Product(1 , "p 3" , 2.3 , 20)),
-    this.products.push( new Product(1 , "p 4" , 2.3 , 20)),
-    this.products.push( new Product(1 , "p 5" , 2.3 , 20)),
-    this.products.push( new Product(1 , "p 6" , 2.3 , 20))
+    // this.products.push( new Product(1 , "p 1" , 2.3 , 20)),
+    // this.products.push( new Product(1 , "p 2" , 2.3 , 20)),
+    // this.products.push( new Product(1 , "p 3" , 2.3 , 20)),
+    // this.products.push( new Product(1 , "p 4" , 2.3 , 20)),
+    // this.products.push( new Product(1 , "p 5" , 2.3 , 20)),
+    // this.products.push( new Product(1 , "p 6" , 2.3 , 20))
 
 
   //----------
@@ -48,12 +48,12 @@ export class ProductsComponent implements OnInit {
   //---------------------------
   // async call with observable (next , error , complete)
   //---------------------------
-  // this.productService.getAllProductsAsyncObservable().subscribe(
-  //   products =>{  this.products = products;  },
-  //   error => console.log(error)
-    // () => {} complete
+  this.productService.getAllProductsAsyncObservable().subscribe(
+    products =>{  this.products = products;  },
+    error => console.log(error),
+    () => { console.log("don")} // complete
 
- // )
+ )
 
 
   

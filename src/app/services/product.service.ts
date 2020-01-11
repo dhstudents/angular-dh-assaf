@@ -5,6 +5,8 @@ import { Observable } from 'rxjs'
   providedIn: "root"
 })
 export class ProductService {
+  
+  counter = 0
   constructor() {}
 
   public getAllProducts(): Product[] {
@@ -55,9 +57,9 @@ export class ProductService {
 
   // observable (import { Observable } from 'rxjs' )
   public getAllProductsAsyncObservable(): Observable<Product[]> {
-
+   
     return Observable.create( observer => {
-      setTimeout(() => {
+      let handle = setInterval(() => {
         try {
           const productlist: Product[] = [];
           productlist.push(new Product(1, "Apple", 3.5, 100));
@@ -65,11 +67,17 @@ export class ProductService {
           productlist.push(new Product(3, "Peach", 10, 50));
           productlist.push(new Product(4, "Watermelon", 6, 40));
           //    return productlist;
+          console.log("tick " + this.counter++ )
           observer.next(productlist);
+          if ( this.counter > 5) {
+            debugger;
+            clearInterval(handle);
+            observer.complete()
+          }
         } catch (error) {
           observer.error(error)
         }
-      }, 5000);
+      }, 1000);
 
     })
 
