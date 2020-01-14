@@ -70,7 +70,7 @@ export class ProductService {
           console.log("tick " + this.counter++ )
           observer.next(productlist);
           if ( this.counter > 5) {
-          /  debugger;
+          //  debugger;
             clearInterval(handle);
             observer.complete()
           }
