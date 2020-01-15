@@ -1,9 +1,9 @@
 <button (click)="getAllUsers()">Get All Users</button>
 <button (click)="getOneUsers()">Get One Users</button>
 
-<div *ngIf="allUsers">
+<div *ngIf="allUsers" style="text-align: left">
   <pre>{{ allUsers | json}}</pre>
 </div>
-<div *ngIf="oneUser">
+<div *ngIf="oneUser" style="text-align: left">
   <pre>{{ oneUser | json}}</pre>
 </div>
