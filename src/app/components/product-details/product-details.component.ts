@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
+import { ActivatedRoute } from '@angular/router'
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -9,10 +10,12 @@ export class ProductDetailsComponent implements OnInit {
 
   product : Product;
 
-  constructor() { }
+  constructor(private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
-    alert("Product details!!!");
+  /  alert("Product details!!!");
+    let proid = this.activatedRoute.snapshot.params.id
+    alert(proid);
   }
 
 }
