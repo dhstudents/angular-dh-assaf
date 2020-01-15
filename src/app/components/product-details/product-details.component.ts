@@ -22,8 +22,9 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getAllProductsHttp()
       .subscribe( 
         products => {
-          let proid = this.activatedRoute.snapshot.params.id
+          let proid = +this.activatedRoute.snapshot.params.id
           this.product = products.find( p => p.id === proid)
+          console.log(this.product)
         },
         error => console.log(error)
       )
