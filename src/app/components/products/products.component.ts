@@ -54,7 +54,11 @@ export class ProductsComponent implements OnInit {
 //     () => { console.log("done")} // complete
 //  )
 
-  this.productService
+  this.productService.getAllProductsHttp().subscribe( 
+    products => this.products = products,    // next
+    error => console.log(error),
+    () => console.log("done")
+  )
 
 
   }
