@@ -2,8 +2,8 @@
 <button (click)="getOneUsers()">Get One Users</button>
 
 <div *ngIf="allUsers">
-  {{ allUsers | json}}
+  <pre>{{ allUsers | json}}</pre>
 </div>
 <div *ngIf="oneUser">
-  {{ oneUsers | json}}
+  <pre>{{ oneUser | json}}</pre>
 </div>
