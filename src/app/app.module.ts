@@ -23,6 +23,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 const routes : Routes = [
    { path: 'home', component: HomeComponent },
    { path: 'products', component: ProductsComponent },
+   { path: 'product-details/:id', component: ProductDetailsComponent },
    { path: 'about', component: AboutComponent },
    { path: 'help', component: HelpComponent },
    { path: '', redirectTo: '/home',  pathMatch: 'full' },

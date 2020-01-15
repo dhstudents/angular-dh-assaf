@@ -12,6 +12,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    alert("Product details!!!");
   }
 
 }
