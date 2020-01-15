@@ -1,13 +1,18 @@
 import { Injectable } from "@angular/core";
 import { Product } from "../models/product";
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
+
+// 3. impoert HttpClient
+import { HttpClient } from '@anguar/common/http';
 @Injectable({
   providedIn: "root"
 })
 export class ProductService {
   
   counter = 0
-  constructor() {}
+  // 4. add DI
+  public constructor(private http : HttpClient) {}
+
 
   public getAllProducts(): Product[] {
     const productlist: Product[] = [];
@@ -78,15 +83,8 @@ export class ProductService {
           observer.error(error)
         }
       }, 1000);
-
     })
-
-
-
-
   }
-
-
 }
 
 // https://angular.io/guide/observables
