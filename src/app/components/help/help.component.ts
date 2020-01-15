@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HelpComponent implements OnInit {
   allUsers : Object[]
+  oneUser : Object
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
@@ -17,6 +18,12 @@ export class HelpComponent implements OnInit {
   getAllUsers() : void {
     this.http.get<Object[]>('https://reqres.in/api/users')
       .subscribe( users => this.allUsers = users )
+  }
+
+  getOneUsers() : void {
+    let userid = prompt("Enter user id:")
+    this.http.get<Object>('https://reqres.in/api/users/' + userid)
+      .subscribe( user => this.oneUser = user )
   }
 
 }
