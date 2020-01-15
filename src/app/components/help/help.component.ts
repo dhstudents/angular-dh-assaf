@@ -16,11 +16,13 @@ export class HelpComponent implements OnInit {
   }
 
   getAllUsers() : void {
+    this.oneUser = null
     this.http.get<Object[]>('https://reqres.in/api/users')
       .subscribe( users => this.allUsers = users )
   }
 
   getOneUsers() : void {
+    this.allUsers = null;
     let userid = prompt("Enter user id:")
     this.http.get<Object>('https://reqres.in/api/users/' + userid)
       .subscribe( user => this.oneUser = user )
