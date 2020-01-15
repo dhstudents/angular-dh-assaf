@@ -85,6 +85,10 @@ export class ProductService {
       }, 1000);
     })
   }
+
+  getAllProductsHttp() : Observable<Product[]> {
+    return this.http.
+  }
 }
 
 // https://angular.io/guide/observables
