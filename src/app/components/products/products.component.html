@@ -13,12 +13,16 @@
 				<th>Name</th>
 				<th>Price</th>
 				<th>Stock</th>
+				<th>Image</th>
 			</tr>
 			<tr *ngFor="let product of products">
 				<td>{{ product.name}}</td>
 				<td>{{ product.price}}</td>
 				<td>{{ product.stock}}</td>
-				<td><img [src]="product.picture"</td>
+				<!-- <td><img [src]="product.picture"></td> -->
+				<td>
+          <app-thumbnail></app-thumbnail>
+        </td>
 			</tr>
 		</table>
 	</div>

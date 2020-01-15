@@ -13,3 +13,8 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: lightcoral;
 }
+
+/* div {
+  height: 85%;
+  overflow: auto;
+} */
