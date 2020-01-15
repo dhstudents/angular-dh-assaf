@@ -85,7 +85,7 @@ export class ProductService {
       }, 1000);
     })
   }
-
+// https://northwind.now.sh/api/products
   getAllProductsHttp() : Observable<Product[]> {
    return this.http.get<Product[]>("/assets/json/products.json")
   }

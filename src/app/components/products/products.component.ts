@@ -53,7 +53,7 @@ export class ProductsComponent implements OnInit {
 //     error => console.log(error),
 //     () => { console.log("done")} // complete
 //  )
-
+// 
   this.productService.getAllProductsHttp().subscribe( 
     products => this.products = products,    // next
     error => console.log(error),

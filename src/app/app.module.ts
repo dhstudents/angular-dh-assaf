@@ -16,7 +16,8 @@ import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
 import { ProductService } from './services/product.service';
 
 // 1. http
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailsComponent } from './components/product-details/product-details.component'
 
 
 const routes : Routes = [
@@ -31,7 +32,7 @@ const routes : Routes = [
 // 2 .add to imports
 @NgModule({                              
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot( routes ) , HttpClientModule],
-  declarations: [ LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, ProductsComponent, AboutComponent, HelpComponent, PageNotFoundComponent, ThumbnailComponent ],
+  declarations: [ LayoutComponent, HeaderComponent, FooterComponent, MenuComponent, HomeComponent, ProductsComponent, AboutComponent, HelpComponent, PageNotFoundComponent, ThumbnailComponent, ProductDetailsComponent ],
   bootstrap:    [LayoutComponent],
   providers: [ProductService]
 })
