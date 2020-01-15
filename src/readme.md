@@ -2,7 +2,8 @@ https://www.youtube.com/playlist?list=PLdZoWGdVe4BsiW7KZJb_Pev9zNTCt1uWp
 https://codecraft.tv/courses/angular/routing/route-configuration/
 https://www.ahmedbouchefra.com/blog/angular-tutorial-example-upload-files-with-formdata-httpclient-rxjs-and-material-progressbar/
 
-
+https://baconmockup.com/100/150/
+http://dummy-image-generator.com/
 
 1. create component folder
 2. add layout component ng g c component/layout --skipTests
