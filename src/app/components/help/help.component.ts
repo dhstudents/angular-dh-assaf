@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-help',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./help.component.css']
 })
 export class HelpComponent implements OnInit {
-
-  constructor() { }
+  allUsers : Object[]
+  constructor(private http : HttpClient) { }
 
   ngOnInit() {
+  }
+
+  getAllUsers() : void {
+    this.http.get<Object[]>('https://reqres.in/api/users')
+      .subscribe( users => this.allUsers = users )
   }
 
 }
