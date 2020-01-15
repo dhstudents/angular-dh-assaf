@@ -3,7 +3,7 @@ import { Product } from "../models/product";
 import { Observable } from 'rxjs';
 
 // 3. impoert HttpClient
-import { HttpClient } from '@anguar/common/http';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: "root"
 })
@@ -87,7 +87,7 @@ export class ProductService {
   }
 
   getAllProductsHttp() : Observable<Product[]> {
-    return this.http.
+   // return this.http.
   }
 }
 
