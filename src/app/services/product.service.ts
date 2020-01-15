@@ -87,7 +87,7 @@ export class ProductService {
   }
 
   getAllProductsHttp() : Observable<Product[]> {
-   // return this.http.
+   return this.http.get<Product[]>("/assets/json/products.json")
   }
 }
 
