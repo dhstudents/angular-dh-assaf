@@ -18,9 +18,16 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit() {
   //  alert("Product details!!!");
-    let proid = this.activatedRoute.snapshot.params.id
-  //  alert(proid);
-  
+  //  alert(this.activatedRoute.snapshot.params.id);
+    this.productService.getAllProductsHttp()
+      .subscribe( 
+        products => {
+          let proid = this.activatedRoute.snapshot.params.id
+          this.product = products.find( p => p.id === proid)
+        },
+        error => console.log(error)
+      )
+
   }
 
 }
