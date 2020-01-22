@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -10,6 +10,8 @@ import { ProductService } from '../../services/product.service';
 export class AddProductComponent implements OnInit {
 // make Product constructor parameters optional with ?
   product : Product;
+  
+  @ViewChild('frm', {static: false }) proForm : any;
   constructor(private productService : ProductService) { }
 
   ngOnInit() {
@@ -18,12 +20,19 @@ export class AddProductComponent implements OnInit {
 
   addProduct() : void {
     console.log("OVED!!!!")
+    //this.proForm.form.reset()
+    this.proForm.resetForm()
     // this is not working add name attribute to the html element
-    alert(this.productDetails())
+    //alert(this.productDetails())
     this.productService.addProduct(this.product) 
-        .subscribe( p => alert(this.productDetails()),
-                    err => alert("Error: " + err)
+        .subscribe( p => this.handleResult(p),
+                    err => alert(`Error: ${JSON.stringify(err , null , 4)}`)
         )
+
+  }
+
+  handleResult(product : Product) : void {
+      alert(this.productDetails()); 
   }
 
   private productDetails() : string {
