@@ -1,17 +1,23 @@
 <form #frm="ngForm"> 
 	<input type="text" name="name"
-         [(ngModel)]="product.name"         
+         [(ngModel)]="product.name"  
+         #nameRef="ngModel"       
          required
+         pattern="^[A-Z].*$"
          placeholder="Name...">
 	<br><br>
   <input type="number" name="price"
          [(ngModel)]="product.price"
+         #priceRef="ngModel"
          min="0" max="100"
+         required
          placeholder="Price...">
 	<br><br>
   <input type="number" name="stock"
          [(ngModel)]="product.stock"
+         #stockRef="ngModel"
          min="8"
+         required
          placeholder="Stock...">
   <br><br>
   <button (click)="addProduct()">Add Product</button>
