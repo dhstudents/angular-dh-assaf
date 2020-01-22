@@ -1,0 +1,15 @@
+<form>
+	<input type="text" name="name"
+        [(ngModel)]="product.name"         
+         placeholder="Name...">
+	<br><br>
+  <input type="number" name="price"
+         [(ngModel)]="product.price"
+         placeholder="Price...">
+	<br><br>
+  <input type="number" name="stock"
+         [(ngModel)]="product.stock"
+         placeholder="Stock...">
+  <br><br>
+  <button (click)="addProduct()">Add Product</button>
+</form>
