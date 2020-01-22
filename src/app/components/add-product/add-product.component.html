@@ -1,24 +1,70 @@
-<form #frm="ngForm"> 
+<style>
+  div > div {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+  }
+  div > div:hover {
+    color: white;
+    background-color: black;
+  }
+  div > p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+</style>
+<form #frm="ngForm">
 	<input type="text" name="name"
-         [(ngModel)]="product.name"  
-         #nameRef="ngModel"       
+         [(ngModel)]="product.name"
+         #nameRef="ngModel"
          required
          pattern="^[A-Z].*$"
          placeholder="Name...">
+         <div *ngIf="nameRef.errors?.required && nameRef.touched">Required!!!!</div>
+         <div *ngIf="nameRef.errors?.pattern && nameRef.touched">Fist letter must be uppercase</div>
+
 	<br><br>
-  <input type="number" name="price"
+	<input type="number" name="price"
          [(ngModel)]="product.price"
          #priceRef="ngModel"
-         min="0" max="100"
          required
          placeholder="Price...">
+         <div *ngIf="priceRef.errors?.required && priceRef.touched">Required!!!!</div>
 	<br><br>
-  <input type="number" name="stock"
+	<input type="number" name="stock"
          [(ngModel)]="product.stock"
          #stockRef="ngModel"
-         min="8"
          required
          placeholder="Stock...">
-  <br><br>
-  <button (click)="addProduct()">Add Product</button>
+         <div *ngIf="stockRef.errors?.required && stockRef.touched">Required!!!!</div>         
+	<br><br>
+	<button (click)="addProduct()">Add Product</button>
 </form>
+<hr>
+<div style="margin: 20px;display: flex;text-align : left">
+	<div>
+		<p><u>nameRef</u></p>
+		<ol>
+			<li>valid: {{ nameRef.valid }} / invalid: {{ nameRef.invalid}} </li>
+			<li>pristine: {{ nameRef.pristine }} / dirty: {{ nameRef.dirty}} </li>
+			<li>touched: {{ nameRef.touched}} / untouched: {{ nameRef.touched }} </li>
+		</ol>
+	</div>
+	<div>
+		<p><u>priceRef</u></p>
+		<ol>
+			<li>valid: {{ priceRef.valid }} / invalid: {{ priceRef.invalid}} </li>
+			<li>pristine: {{ priceRef.pristine }} / dirty: {{ priceRef.dirty}} </li>
+			<li>touched: {{ priceRef.touched}} / untouched: {{ priceRef.touched }} </li>
+		</ol>
+	</div>
+	<div>
+		<p><u>stockRef</u></p>
+		<ol>
+			<li>valid: {{ stockRef.valid }} / invalid: {{ stockRef.invalid}} </li>
+			<li>pristine: {{ stockRef.pristine }} / dirty: {{ stockRef.dirty}} </li>
+			<li>touched: {{ stockRef.touched}} / untouched: {{ stockRef.touched }} </li>
+		</ol>
+	</div>
+</div>
