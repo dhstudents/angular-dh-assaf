@@ -1,14 +1,17 @@
 <form #frm="ngForm"> 
 	<input type="text" name="name"
-        [(ngModel)]="product.name"         
+         [(ngModel)]="product.name"         
+         required
          placeholder="Name...">
 	<br><br>
   <input type="number" name="price"
          [(ngModel)]="product.price"
+         min="0" max="100"
          placeholder="Price...">
 	<br><br>
   <input type="number" name="stock"
          [(ngModel)]="product.stock"
+         min="8"
          placeholder="Stock...">
   <br><br>
   <button (click)="addProduct()">Add Product</button>
