@@ -13,6 +13,12 @@
     font-size: 20px;
     font-weight: 700;
   }
+
+  ng-invalid {
+    background-color: lightred;
+    color: darkred;
+
+  }
 </style>
 <form #frm="ngForm">
 	<input type="text" name="name"
@@ -21,8 +27,8 @@
          required
          pattern="^[A-Z].*$"
          placeholder="Name...">
-         <div *ngIf="nameRef.errors?.required && nameRef.touched">Required!!!!</div>
-         <div *ngIf="nameRef.errors?.pattern && nameRef.touched">Fist letter must be uppercase</div>
+         <div [ngClass]="{ng-invalid: priceRef.invalid}" *ngIf="nameRef.errors?.required && nameRef.touched">Required!!!!</div>
+         <div [ngClass]="{ng-invalid: priceRef.invalid}" *ngIf="nameRef.errors?.pattern && nameRef.touched">Fist letter must be uppercase</div>
 
 	<br><br>
 	<input type="number" name="price"
