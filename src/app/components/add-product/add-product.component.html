@@ -1,24 +1,28 @@
 <style>
-  div > div {
-    border: 1px solid black;
-    margin: 10px;
-    padding: 20px;
-    font-size: 20px;
-  }
-  div > div:hover {
-    color: white;
-    background-color: black;
-  }
-  div > p {
-    font-size: 20px;
-    font-weight: 700;
-  }
+	div>div {
+		border: 1px solid black;
+		margin: 10px;
+		padding: 20px;
+		font-size: 20px;
+	}
 
-  ng-invalid {
-    background-color: lightred;
-    color: darkred;
+	div>div:hover {
+		color: white;
+		background-color: black;
+	}
 
-  }
+	div>p {
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	span {
+		font-size: 1em;
+		background-color: lightred;
+		color: darkred;
+    margin: 15px;
+    position: absolute;
+	}
 </style>
 <form #frm="ngForm">
 	<input type="text" name="name"
@@ -27,24 +31,25 @@
          required
          pattern="^[A-Z].*$"
          placeholder="Name...">
-         <div [ngClass]="{ng-invalid: priceRef.invalid}" *ngIf="nameRef.errors?.required && nameRef.touched">Required!!!!</div>
-         <div [ngClass]="{ng-invalid: priceRef.invalid}" *ngIf="nameRef.errors?.pattern && nameRef.touched">Fist letter must be uppercase</div>
 
-	<br><br>
+		<span *ngIf="nameRef.errors?.required && nameRef.touched">Required!!!!</span>
+		<span *ngIf="nameRef.errors?.pattern && nameRef.touched">Fist letter must be uppercase</span>
+
+	<br>
 	<input type="number" name="price"
          [(ngModel)]="product.price"
          #priceRef="ngModel"
          required
          placeholder="Price...">
-         <div *ngIf="priceRef.errors?.required && priceRef.touched">Required!!!!</div>
-	<br><br>
+	<span *ngIf="priceRef.errors?.required && priceRef.touched">Required!!!!</span>
+	<br>
 	<input type="number" name="stock"
          [(ngModel)]="product.stock"
          #stockRef="ngModel"
          required
          placeholder="Stock...">
-         <div *ngIf="stockRef.errors?.required && stockRef.touched">Required!!!!</div>         
-	<br><br>
+	<span *ngIf="stockRef.errors?.required && stockRef.touched">Required!!!!</span>
+	<br>
 	<button (click)="addProduct()">Add Product</button>
 </form>
 <hr>
