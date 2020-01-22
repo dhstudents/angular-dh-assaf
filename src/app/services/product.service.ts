@@ -86,10 +86,22 @@ export class ProductService {
     })
   }
 // https://northwind.now.sh/api/products
-  getAllProductsHttp() : Observable<Product[]> {
+getAllProductsHttp() : Observable<Product[]> {
    return this.http.get<Product[]>("/assets/json/products.json")
-  }
 }
+
+public addProduct(product : Product): Observable<Product> {
+  return this.http.post<Product>("http://localhost:3000/products" , product)
+}
+
+
+
+
+}  // end of class
+
+
+
+
 
 // https://angular.io/guide/observables
 // https://angular.io/guide/observables-in-angular
