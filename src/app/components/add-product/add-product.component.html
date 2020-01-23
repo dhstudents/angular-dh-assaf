@@ -54,8 +54,16 @@
 </form>
 <hr>
 <div style="margin: 20px;display: flex;text-align : left">
-	<div>
-		<p><u>nameRef</u></p>
+	<div hidden>
+		<p><u>#frm</u></p>
+		<ol>
+			<li>valid: {{ nameRef.valid }} / invalid: {{ nameRef.invalid}} </li>
+			<li>pristine: {{ nameRef.pristine }} / dirty: {{ nameRef.dirty}} </li>
+			<li>touched: {{ nameRef.touched}} / untouched: {{ nameRef.touched }} </li>
+		</ol>
+	</div>
+  <div>
+		<p><u>#nameRef</u></p>
 		<ol>
 			<li>valid: {{ nameRef.valid }} / invalid: {{ nameRef.invalid}} </li>
 			<li>pristine: {{ nameRef.pristine }} / dirty: {{ nameRef.dirty}} </li>
@@ -73,6 +81,7 @@
 	<div>
 		<p><u>stockRef</u></p>
 		<ol>
+      <li>Classes: {{ stockRef.nativeElement }}</li>
 			<li>valid: {{ stockRef.valid }} / invalid: {{ stockRef.invalid}} </li>
 			<li>pristine: {{ stockRef.pristine }} / dirty: {{ stockRef.dirty}} </li>
 			<li>touched: {{ stockRef.touched}} / untouched: {{ stockRef.touched }} </li>

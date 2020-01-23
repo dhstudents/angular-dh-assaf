@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild } from '@angular/core';
+import { Component, OnInit , ViewChild , ElementRef } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 
@@ -11,11 +11,13 @@ export class AddProductComponent implements OnInit {
 // make Product constructor parameters optional with ?
   product : Product;
   
-  @ViewChild('frm', {static: false }) proForm : any;
+  @ViewChild('frm', {static: true }) proForm : any;
+  @ViewChild('nameRef', {static: true }) inputName : ElementRef;
   constructor(private productService : ProductService) { }
 
   ngOnInit() {
     this.product = new Product();
+    console.log(this.inputName)
   }
 
   addProduct() : void {
